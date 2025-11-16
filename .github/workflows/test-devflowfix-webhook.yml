@@ -1,0 +1,27 @@
+name: DevFlowFix Webhook Test
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - dev
+  workflow_dispatch:
+
+jobs:
+  test-failure:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Simulate test failure
+        run: |
+          echo "Running tests that will fail..."
+          echo "This is intentional for webhook testing"
+          exit 1
+      
+      - name: This step won't run
+        if: success()
+        run: echo "Success! But this shouldn't execute"
