@@ -6,3 +6,5 @@ jobs:
     steps:
       - name: Intentional Failure
         run: exit 1
+
+        
