@@ -13,9 +13,9 @@ jobs:
       
       - name: Intentional Failure for Testing
         run: |
-          echo "🧪 Testing DevFlowFix webhook integration"
-          echo "📡 This workflow will fail intentionally to trigger the webhook"
-          echo "✅ DevFlowFix should detect this failure and create an incident"
+          echo "Testing DevFlowFix webhook integration"
+          echo "This workflow will fail intentionally to trigger the webhook"
+          echo "DevFlowFix should detect this failure and create an incident"
           echo ""
           echo "Repository: ${{ github.repository }}"
           echo "Branch: ${{ github.ref_name }}"
