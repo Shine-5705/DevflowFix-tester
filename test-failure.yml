@@ -1,26 +1,8 @@
-name: Test DevFlowFix Webhook
-on:
-  push:
-    branches: [main, master]
-  workflow_dispatch:
-
+name: Test Webhook
+on: [push, workflow_dispatch]
 jobs:
-  test-failure:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Intentional Failure for Testing
-        run: |
-          echo "Testing DevFlowFix webhook integration"
-          echo "This workflow will fail intentionally to trigger the webhook"
-          echo "DevFlowFix should detect this failure and create an incident"
-          echo ""
-          echo "Repository: ${{ github.repository }}"
-          echo "Branch: ${{ github.ref_name }}"
-          echo "Commit: ${{ github.sha }}"
-          echo "Author: ${{ github.actor }}"
-          echo ""
-          echo "❌ Failing now..."
-          exit 1
+      - name: Intentional Failure
+        run: exit 1
