@@ -1,10 +1,16 @@
-name: Test Webhook
-on: [push, workflow_dispatch]
+name: DevFlowFix Webhook Test
+on: 
+  push:
+  workflow_dispatch:
+
 jobs:
-  test:
+  test-failure:
     runs-on: ubuntu-latest
     steps:
-      - name: Intentional Failure
-        run: exit 1
-
-        
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: This will fail
+        run: |
+          echo "Testing DevFlowFix webhook..."
+          exit 1
