@@ -7,7 +7,7 @@ export const useProducts = () => {
   const [error, setError] = useState<string | null>(null)
   
   // This will cause a TypeScript error - assigning number to string
-  const invalidTypeAssignment: string = 1235333888
+  const invalidTypeAssignment: string = 123533388
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
