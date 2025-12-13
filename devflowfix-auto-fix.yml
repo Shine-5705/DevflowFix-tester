@@ -6,10 +6,10 @@ on:
       - main
       - develop
       - '**'  # Run on all branches
-    paths:
-      - '**.py'  # Only when Python files change
-      - 'app/**'
-      - 'requirements.txt'
+    # paths:
+    #   - '**.py'  # Only when Python files change
+    #   - 'app/**'
+    #   - 'requirements.txt'
   pull_request:
     branches:
       - main
